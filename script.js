@@ -11,9 +11,6 @@ window.addEventListener('load', function(e){
     
     mainContainer.addEventListener('click', function (e) {
         let targetQ = e.target.parentNode;
-        
-        
-        
         if (targetQ.getAttribute('class') === 'item') {
             console.log(targetQ);
             //var dupNode = targetQ.cloneNode(true);
