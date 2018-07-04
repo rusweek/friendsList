@@ -11,11 +11,20 @@ window.addEventListener('load', function(e){
     //модуль для перемещения item из  mainContainer в inviteList
     mainContainer.addEventListener('click', function (e) { 
         let targetQ = e.target.parentNode;
+        
+        //модуль для замены кнопки на зеленую
+        let dupNode = btnClear.cloneNode(true)
+        let remBtnAdd = targetQ.lastElementChild;
+        remBtnAdd.remove();
+        targetQ.appendChild(dupNode);
+        /////////////////////////////////////////
+        
         if (targetQ.getAttribute('class') === 'item') {
-            console.log(targetQ);
+            console.log(targetQ.lastElementChild);
             //var dupNode = targetQ.cloneNode(true);
             //inviteList.appendChild(dupNode);
             inviteList.appendChild(targetQ);
+
             
         }
     });
@@ -24,11 +33,19 @@ window.addEventListener('load', function(e){
     //модуль для перемещения item из    inviteList в mainContainer
     inviteList.addEventListener('click', function (e) { 
         let targetQ = e.target.parentNode;
+        //модуль для замены кнопки на красную
+        let dupNode = btnAdd.cloneNode(true)
+        let remBtnAdd = targetQ.lastElementChild;
+        remBtnAdd.remove();
+        targetQ.appendChild(dupNode);
+        /////////////////////////////////////
+
         if (targetQ.getAttribute('class') === 'item') {
             console.log(targetQ);
             //var dupNode = targetQ.cloneNode(true);
             //inviteList.appendChild(dupNode);
             mainContainer.appendChild(targetQ);
+
             
         }
     });
