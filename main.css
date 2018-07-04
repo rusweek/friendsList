@@ -1,0 +1,23 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    min-width: 520px;
+    background-color: #cccaca
+    
+}
+
+.mainContainer {
+    background-color: #fff;
+}
+
+.inviteList {
+    background-color: #fff;
+}
