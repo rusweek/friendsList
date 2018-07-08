@@ -2,9 +2,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.wrapper, .wrapper2 {
+.wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -97,4 +98,14 @@ body{
 ::-webkit-scrollbar-track:hover{
     /*border-left: solid 1px #aaa;
     background-color: #eee;*/
+}
+#kill {
+    background-color: #f75656;
+    
+}
+
+.btnKill {
+    margin: 10px;
+    align-self: center;
+    
 }
