@@ -3,13 +3,6 @@ window.addEventListener('load', function(e){
     // условие для загрузки из локального хранилища
     if(localStorage.length > 0){
         
-
-        //var tmpRange = document.createRange(); // создаем рэндж
-        //tmpRange.selectNodeContents(wrapper); // выбираем содержимое контейнера, если надо и контейнер то selectNode
-        //tmpRange.deleteContents(); //Метод deleteContents удаляет всё содержимое объекта Range
-        //tmpRange.detach(); // Метод detach извлекает текущий объект из DOM, так что на него больше нельзя сослаться.
-        
-        
         LocalStForMyApp();
         
     };
@@ -20,14 +13,7 @@ window.addEventListener('load', function(e){
     let wrapper = document.querySelector('.wrapper');
     let btnClear = document.querySelector('.btnClear');
     let btnAdd = document.querySelector('.btnAdd');
-
-    
-    
-    
-    
-
-
-    
+    let kill = document.querySelector('#kill');
     
     //модуль для перемещения item из  mainContainer в inviteList
     mainContainer.addEventListener('click', function (e) { 
@@ -86,7 +72,12 @@ window.addEventListener('load', function(e){
         
     });
 
-    function LocalStForMyApp(){
+    kill.addEventListener('click', function (e) {
+        localStorage.clear();
+        window.location.reload();
+    })
+
+    function LocalStForMyApp(){//функция для загрузки страницы из локального хранилища
         if (localStorage.length > 0) {
             for (let i = 0; i < localStorage.length; i++) {
                 let key = localStorage.key(i);
