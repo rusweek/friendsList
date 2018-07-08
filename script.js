@@ -1,20 +1,33 @@
 window.addEventListener('load', function(e){
-    let mainContainer = document.querySelector('.mainContainer');
-    
-    
-    let inviteList = document.querySelector('.inviteList');
-    let item = document.querySelectorAll('.item');
-    let btnAdd = document.querySelector('.btnAdd');
-    
-    let btnClear = document.querySelector('.btnClear');
-    let wrapper = document.querySelector('.wrapper');
-    let wrapper2 = document.querySelector('.wrapper2');
-
 
     // условие для загрузки из локального хранилища
-    if(this.localStorage.length>0){
+    if(localStorage.length > 0){
+        
+
+        //var tmpRange = document.createRange(); // создаем рэндж
+        //tmpRange.selectNodeContents(wrapper); // выбираем содержимое контейнера, если надо и контейнер то selectNode
+        //tmpRange.deleteContents(); //Метод deleteContents удаляет всё содержимое объекта Range
+        //tmpRange.detach(); // Метод detach извлекает текущий объект из DOM, так что на него больше нельзя сослаться.
+        
+        
         LocalStForMyApp();
+        
     };
+
+    let mainContainer = document.querySelector('.mainContainer');
+    let inviteList = document.querySelector('.inviteList');
+    let item = document.querySelectorAll('.item');
+    let wrapper = document.querySelector('.wrapper');
+    let btnClear = document.querySelector('.btnClear');
+    let btnAdd = document.querySelector('.btnAdd');
+
+    
+    
+    
+    
+
+
+    
     
     //модуль для перемещения item из  mainContainer в inviteList
     mainContainer.addEventListener('click', function (e) { 
@@ -64,13 +77,13 @@ window.addEventListener('load', function(e){
     mainContainer.addEventListener('click', function () {
         localStorage.setItem(1, wrapper.innerHTML);
         
-        LocalStForMyApp();
+        
     });
 
     inviteList.addEventListener('click', function () {
         localStorage.setItem(1, wrapper.innerHTML);
         
-        LocalStForMyApp();
+        
     });
 
     function LocalStForMyApp(){
@@ -79,7 +92,8 @@ window.addEventListener('load', function(e){
                 let key = localStorage.key(i);
                 let item = localStorage.getItem(key);
                 let item2 = localStorage[key];
-                wrapper2.innerHTML = item2;
+                let wrapper = document.querySelector('.wrapper');
+                wrapper.innerHTML = item2;
                 
                 
             };
